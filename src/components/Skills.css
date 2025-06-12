@@ -1,0 +1,123 @@
+.skills {
+  background-color: var(--text-light);
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 4rem 1rem;
+}
+
+.skills h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: var(--text-dark);
+  position: relative;
+  z-index: 2;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.skill-card {
+  background: var(--primary-cream);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--primary-pink), var(--primary-green));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+}
+
+.skill-card:hover::before {
+  opacity: 0.12;
+}
+
+.skill-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  position: relative;
+  z-index: 1;
+}
+
+.skill-level {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  opacity: 0.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* ✅ Floating emoji styling */
+.skills-icon {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 1;
+  animation: floatIcon 7s ease-in-out infinite alternate;
+}
+
+.icon-1 { top: 5%; left: 8%; animation-delay: 0s; }
+.icon-2 { top: 25%; right: 10%; animation-delay: 1s; }
+.icon-3 { bottom: 10%; left: 12%; animation-delay: 2s; }
+.icon-4 { top: 60%; right: 8%; animation-delay: 3s; }
+.icon-5 { bottom: 20%; right: 18%; animation-delay: 4s; }
+.icon-6 { top: 40%; left: 50%; animation-delay: 5s; }
+
+@keyframes floatIcon {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(10deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@media (max-width: 768px) {
+  .skills h2 {
+    font-size: 2.5rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .skill-card {
+    padding: 1rem;
+  }
+
+  .skill-name {
+    font-size: 1.1rem;
+  }
+
+  .skills-icon {
+    font-size: 2rem;
+  }
+}

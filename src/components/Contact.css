@@ -1,0 +1,139 @@
+.contact {
+  background: linear-gradient(135deg, var(--primary-pink), var(--primary-green));
+  color: var(--text-light);
+  position: relative;
+  width: 100%;
+  padding: 4rem 1rem;
+  overflow: hidden;
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.contact-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  min-width: 260px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.contact-label {
+  font-weight: 600;
+  min-width: 80px;
+}
+
+.contact-link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.contact-link:hover {
+  opacity: 0.8;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  background: var(--text-light);
+  color: var(--text-dark);
+  padding: 0.7rem 1.4rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.social-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.contact-right {
+  flex: 1;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.emoji {
+  font-size: 2.5rem;
+  animation: float 6s ease-in-out infinite;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.emoji:nth-child(1) {
+  animation-delay: 0s;
+}
+.emoji:nth-child(2) {
+  animation-delay: 1s;
+}
+.emoji:nth-child(3) {
+  animation-delay: 2s;
+}
+.emoji:nth-child(4) {
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(10deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact h2 {
+    font-size: 2.5rem;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .social-links {
+    justify-content: flex-start;
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+}
